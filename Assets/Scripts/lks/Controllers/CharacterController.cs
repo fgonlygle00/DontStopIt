@@ -65,7 +65,7 @@ public class CharacterController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "jellyspawn")
+        if (collision.gameObject.tag == "Jelly")
         {
             Destroy(collision.gameObject);
             OnHit(collision.transform.position);
