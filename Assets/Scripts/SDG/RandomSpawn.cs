@@ -37,3 +37,4 @@ public class RandomSpawn : MonoBehaviour
         Instantiate(selectedJellyPrefab, pos, Quaternion.identity);
     }
 }
+
