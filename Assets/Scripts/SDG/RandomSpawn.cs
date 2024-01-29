@@ -12,11 +12,6 @@ public class RandomSpawn : MonoBehaviour
         StartCoroutine(CreateJellyRoutine());
     }
 
-    void Update()
-    {
-
-    }
-
     IEnumerator CreateJellyRoutine()
     {
         while (true)
@@ -36,11 +31,10 @@ public class RandomSpawn : MonoBehaviour
 
         GameObject selectedJellyPrefab = jellyPrefabs[Random.Range(0, jellyPrefabs.Count)];
 
-        Vector3 pos = Camera.main.ViewportToWorldPoint(new Vector3(Random.Range(0.0f, 1.0f), 1.1f, 0));
+        Vector3 pos = Camera.main.ViewportToWorldPoint(new Vector3(Random.Range(0.2f, 0.8f), 1.1f, 0));
         pos.z = 0.0f;
 
         Instantiate(selectedJellyPrefab, pos, Quaternion.identity);
     }
-
-
 }
+

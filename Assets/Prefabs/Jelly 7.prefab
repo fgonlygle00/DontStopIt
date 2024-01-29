@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2287861612073058497}
   m_Layer: 0
   m_Name: Jelly 7
-  m_TagString: jellyspawn
+  m_TagString: Jelly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
