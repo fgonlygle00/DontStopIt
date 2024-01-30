@@ -113,7 +113,6 @@ public class CharacterController : MonoBehaviour
 
     void OnHit2(Vector3 targetSca)
     {
-        gameObject.layer = 11;
         transform.localScale = targetSca + new Vector3(0.1f, 0, 0);
         cc.size += new Vector2(0.01f, 0);
 
