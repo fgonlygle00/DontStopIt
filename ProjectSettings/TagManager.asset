@@ -8,6 +8,7 @@ TagManager:
   - player
   - jellyspawn
   - Saw_Wheel
+  - platform
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - jellyspawn
   - OnHit
   - NoDamage
-  - 
+  - OnHit2
   - 
   - 
   - 

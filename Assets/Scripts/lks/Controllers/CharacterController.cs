@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
@@ -10,13 +11,24 @@ public class CharacterController : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     Animator animator;
+    CapsuleCollider2D cc;
 
+    int playerLayer, platformLayer;
+    int OnHitLayer;
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        cc = GetComponent<CapsuleCollider2D>();
+
+
+        playerLayer = LayerMask.NameToLayer("player");
+        OnHitLayer = LayerMask.NameToLayer("OnHit");
+        platformLayer = LayerMask.NameToLayer("platform");
     }
+
 
     void Update()
     {
@@ -48,7 +60,7 @@ public class CharacterController : MonoBehaviour
         }
 
         //change direction
-        if (Input.GetButtonDown("Horizontal"))
+        if (Input.GetButton("Horizontal"))
         {
             spriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == -1;
         }
@@ -62,6 +74,7 @@ public class CharacterController : MonoBehaviour
         {
             animator.SetBool("isRun", true);
         }
+       
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -70,7 +83,8 @@ public class CharacterController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             OnHit(collision.transform.position);
-            //Debug.Log("ÇÃ·¹ÀÌ¾î°¡ ¸Â¾Ò½À´Ï´Ù");
+            OnHit2(gameObject.transform.localScale);
+            //Debug.Log("í”Œë ˆì´ì–´ê°€ ë§žì•˜ìŠµë‹ˆë‹¤");
         }
         //if(collision.gameObject.tag == "")
         //{
@@ -78,27 +92,54 @@ public class CharacterController : MonoBehaviour
         //}
     }
 
-    //ÇÃ·¹ÀÌ¾î°¡ ¸Â¾ÒÀ» ½Ã
+    //í”Œë ˆì´ì–´ê°€ ë§žì•˜ì„ ì‹œ
     void OnHit(Vector2 targetPos)
     {
-        gameObject.layer = 9;
+        if(gameObject.layer != 9)
+        {
+            gameObject.layer = 9;
 
-        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+            spriteRenderer.color = new Color(1, 1, 1, 0.4f);
 
-        int dir = transform.position.x - targetPos.x > 0 ? 1 : -1;
-        rb.AddForce(new Vector2(dir, 1) * 5, ForceMode2D.Impulse);
+            maxSpeed = Mathf.Max(0.0f, maxSpeed - 0.5f);
+            jumpSpeed = Mathf.Max(0.0f, jumpSpeed - 2);
 
-        Invoke("NoDamage", 1);
+            int dir = transform.position.x - targetPos.x > 0 ? 1 : -1;
+            rb.AddForce(new Vector2(dir, 1) * 5, ForceMode2D.Impulse);
+
+            Invoke("NoDamage", 1);
+        }
+    }
+
+    void OnHit2(Vector3 targetSca)
+    {
+        gameObject.layer = 11;
+        transform.localScale = targetSca + new Vector3(0.1f, 0, 0);
+        cc.size += new Vector2(0.01f, 0);
+
+        //Physics2D.SyncTransforms();
     }
 
     void NoDamage()
     {
-        gameObject.layer = 10;
+        gameObject.layer = 6;
         spriteRenderer.color = new Color(1, 1, 1, 1);
     }
 
     void FixedUpdate()
     {
+        //jump collision ignore
+        if (rb.velocity.y > 0)
+        {
+            Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, true);
+            Physics2D.IgnoreLayerCollision(OnHitLayer, platformLayer, true);
+        }
+        else
+        {
+            Physics2D.IgnoreLayerCollision(playerLayer, platformLayer, false);
+            Physics2D.IgnoreLayerCollision(OnHitLayer, platformLayer, false);
+        }
+
         //jump landing
         if (rb.velocity.y < 0)
         {
