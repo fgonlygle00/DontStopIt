@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -72,7 +73,10 @@ public class CharacterChoiceController : MonoBehaviour
 
     public void RealGameStart()
     {
-        SceneManager.LoadScene("MainScene");
+        GameObject finalCharacter = _character.Where(obj => obj.activeSelf).FirstOrDefault();
+        if (finalCharacter != null) PlayerPrefs.SetString("FinalCharacter", finalCharacter.name);
+        else return;
+        SceneManager.LoadScene("CharacterApply");
     }
 
     public void SelectAgin()
