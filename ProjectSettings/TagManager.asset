@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Jelly
   - player
+  - jellyspawn
+  - Saw_Wheel
   layers:
   - Default
   - TransparentFX

@@ -10,6 +10,7 @@ public class CharacterController : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     Animator animator;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
