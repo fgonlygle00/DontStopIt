@@ -26,7 +26,7 @@ public class BlockManager : MonoBehaviour
     private int[] GetRandomGridPosition(int tileCount)
     {
         List<int> availableNumbers = new List<int>();
-        for(int i =0; i<19; i++)
+        for(int i =0; i<24; i++)
         {
             availableNumbers.Add(i);
         }
@@ -62,7 +62,7 @@ public class BlockManager : MonoBehaviour
     {
         for (int i = 0; i < 4; i++) // »ÌÀº ¼ýÀÚ¸¦ ±âÁØÀ¸·Î ºí·ÏÀ» °ãÄ¡Áö ¾Ê°Ô ±ò ¼ö ÀÖ´ÂÁö È®ÀÎ
         {
-            int numToCheck = (number + i) % 19;
+            int numToCheck = (number + i) % 24;
             if (!availableNumbers.Contains(numToCheck))
             {
                 return false;
@@ -73,9 +73,9 @@ public class BlockManager : MonoBehaviour
 
     private void RemoveNumbersInRange(int number, List<int> availableNumbers)
     {
-        for (int i = -1; i < 5; i++) // »ÌÀº ¼ýÀÚ ±âÁØÀ¸·Î 6Ä­À» Á¦°Å (ºí·Ï 4Ä­ + ÁÂ¿ì 2Ä­)
+        for (int i = -2; i < 6; i++) // »ÌÀº ¼ýÀÚ ±âÁØÀ¸·Î 6Ä­À» Á¦°Å (ºí·Ï 4Ä­ + ÁÂ¿ì 2Ä­)
         {
-            int numToRemove = (number + i) % 19;
+            int numToRemove = (number + i) % 24;
             availableNumbers.Remove(numToRemove);
         }
     }
