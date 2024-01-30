@@ -5,6 +5,6 @@ public class OpeningUIController : MonoBehaviour
 {
     public void PlayBtn()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("CharacterChoiceScene");
     }
 }
