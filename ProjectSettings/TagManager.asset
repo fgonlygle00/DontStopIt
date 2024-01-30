@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Jelly
   - player
+  - jellyspawn
+  - platform
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - jellyspawn
   - OnHit
   - NoDamage
-  - 
+  - OnHit2
   - 
   - 
   - 
