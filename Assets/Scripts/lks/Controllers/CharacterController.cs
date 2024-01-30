@@ -15,7 +15,7 @@ public class CharacterController : MonoBehaviour
 
     int playerLayer, platformLayer;
     int OnHitLayer;
-
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -84,7 +84,7 @@ public class CharacterController : MonoBehaviour
             Destroy(collision.gameObject);
             OnHit(collision.transform.position);
             OnHit2(gameObject.transform.localScale);
-            //Debug.Log("ÇÃ·¹ÀÌ¾î°¡ ¸Â¾Ò½À´Ï´Ù");
+            //Debug.Log("í”Œë ˆì´ì–´ê°€ ë§ì•˜ìŠµë‹ˆë‹¤");
         }
         //if(collision.gameObject.tag == "")
         //{
@@ -92,7 +92,7 @@ public class CharacterController : MonoBehaviour
         //}
     }
 
-    //ÇÃ·¹ÀÌ¾î°¡ ¸Â¾ÒÀ» ½Ã
+    //í”Œë ˆì´ì–´ê°€ ë§ì•˜ì„ ì‹œ
     void OnHit(Vector2 targetPos)
     {
         if(gameObject.layer != 9)
