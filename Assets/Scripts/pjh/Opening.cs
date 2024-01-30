@@ -5,7 +5,7 @@ public class Opening : MonoBehaviour
     [SerializeField] private GameObject _pressAnyKey;
     [SerializeField] private GameObject _sawheel;
 
-    [SerializeField] private void GameStart()
+    private void GameStart()
     {
         _pressAnyKey.SetActive(true);
     }
