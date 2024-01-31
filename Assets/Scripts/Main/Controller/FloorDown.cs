@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class FloorDown : MonoBehaviour
 {
-    [SerializeField] float fallsec = 0.1f, destroysec = 5f;
+    [SerializeField] float fallsec = 0f, destroysec = 0.5f;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,8 @@ public class FloorDown : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == ("MainSprite"))
+        
+        if (collision.gameObject.tag == "player")
         {
             Invoke("platformdown", fallsec);
             Destroy(gameObject, destroysec);

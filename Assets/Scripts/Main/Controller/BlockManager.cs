@@ -5,7 +5,6 @@ using UnityEngine;
 public class BlockManager : MonoBehaviour
 {
     public GameObject block;
-    public Grid grid;
 
     void Start()
     {
@@ -73,7 +72,7 @@ public class BlockManager : MonoBehaviour
 
     private void RemoveNumbersInRange(int number, List<int> availableNumbers)
     {
-        for (int i = -2; i < 6; i++) // »ÌÀº ¼ýÀÚ ±âÁØÀ¸·Î 6Ä­À» Á¦°Å (ºí·Ï 4Ä­ + ÁÂ¿ì 2Ä­)
+        for (int i = -2; i < 6; i++) // »ÌÀº ¼ýÀÚ ±âÁØÀ¸·Î 8Ä­À» Á¦°Å (ºí·Ï 4Ä­ + ÁÂ¿ì 4Ä­)
         {
             int numToRemove = (number + i) % 24;
             availableNumbers.Remove(numToRemove);
