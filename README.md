@@ -18,8 +18,7 @@ Unity 2D 게임 팀 프로젝트
 Unity Editor Version 2022.3.2f1   
 IDE: Visual Studio 2022
 
----
-### 게임 플레이
+## 게임 플레이
 ---
 #### 시작화면
 <img src = "https://github.com/fgonlygle00/DontStopIt/assets/120997897/34a507ec-04c3-46e9-95e3-c13513ed332a" width="400" height="300"/>
