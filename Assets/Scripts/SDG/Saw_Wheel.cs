@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Saw_Wheel : MonoBehaviour
 {
-    public float speed = 2f;
+    [SerializeField] private GameObject _gameOverEnding;
 
-    private Death death;
+    public float speed = 2f;
 
     void Update()
     {
@@ -28,11 +25,8 @@ public class Saw_Wheel : MonoBehaviour
 
         if (collision.gameObject.tag == "player")
         {
-            Destroy(collision.gameObject, 2f);
-            if (death != null)
-            {
-                death.GameOver();
-            }
+            Destroy(collision.gameObject);
+            _gameOverEnding.SetActive(true);
         }
     }
 }

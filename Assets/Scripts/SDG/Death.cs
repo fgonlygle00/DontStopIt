@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
 {
+    public static Death instance;
+
+    public void Awake()
+    {
+        instance = this;
+    }
+
     public void GameOver()
     {
         Debug.Log("Game Over");

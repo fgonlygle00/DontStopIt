@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    [SerializeField] private GameObject[] _prefabsCharacter;
+
     public float maxSpeed;
     public float jumpSpeed;
     Rigidbody2D rb;
@@ -18,9 +20,18 @@ public class CharacterController : MonoBehaviour
     
     private void Awake()
     {
+        for (int i = 0; i < _prefabsCharacter.Length; i++)
+        {
+            if (_prefabsCharacter[i].name == PlayerPrefs.GetString("FinalCharacter"))
+            {
+                Instantiate(_prefabsCharacter[i], transform);
+                break;
+            }
+        }
+
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
         cc = GetComponent<CapsuleCollider2D>();
 
 
@@ -28,8 +39,6 @@ public class CharacterController : MonoBehaviour
         OnHitLayer = LayerMask.NameToLayer("OnHit");
         platformLayer = LayerMask.NameToLayer("platform");
     }
-
-
     void Update()
     {
         //move
