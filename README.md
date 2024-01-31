@@ -2,8 +2,8 @@
 Unity 2D 게임 팀 프로젝트
 
 ## 프로젝트 소개
-컨셉: 다이어트를 하기 위해 음식에게서 도망가는 컨셉
-게임 방식, 목표: 캐릭터가 발판을 밟고 점프하면서 골인지점까지 음식을 맞지 않고 도달
+컨셉: 다이어트를 하기 위해 음식에게서 도망가는 컨셉  
+게임 방식, 목표: 캐릭터가 발판을 밟고 점프하면서 골인지점까지 음식을 맞지 않고 도달  
 
 ## 개발 기간
 24.1.24수 ~ 24.1.31수
@@ -30,3 +30,8 @@ IDE: Visual Studio 2022
 ---
 #### 게임플레이 화면
 <img src = "https://github.com/fgonlygle00/DontStopIt/assets/120997897/7e0b9b1a-2ec0-4a6d-8acc-77554120c7c7" width="400" height="300"/>
+
+---
+#### 캐릭터가 톱날에 닿았을 시
+<img src = "https://github.com/fgonlygle00/DontStopIt/assets/120997897/f717f34d-c882-4ea5-a804-dad5005190ab" width="400" height="300"/>
+
