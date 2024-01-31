@@ -15,7 +15,7 @@ Unity 2D 게임 팀 프로젝트
 팀원 이영선: 맵 백그라운드 구성, 맵 발판 랜덤 생성   
  
 ## 개발 환경
-Unity Editor Version 2022.3.2f1
+Unity Editor Version 2022.3.2f1   
 IDE: Visual Studio 2022
 
 ---
