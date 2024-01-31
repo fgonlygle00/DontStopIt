@@ -20,10 +20,12 @@ IDE: Visual Studio 2022
 
 ### 게임 플레이
 #### 시작화면
-<img src = "!https://github.com/fgonlygle00/DontStopIt/assets/120997897/34a507ec-04c3-46e9-95e3-c13513ed332a" width="300 height="400"/>
+<img src = "https://github.com/fgonlygle00/DontStopIt/assets/120997897/34a507ec-04c3-46e9-95e3-c13513ed332a" width="300" height="400"/>
+
 ---
 #### 캐릭터 선택 화면
-<img src = "https://github.com/fgonlygle00/DontStopIt/assets/120997897/e7b377b1-b1f4-4a5d-be4d-f99a80597897" width="300 height="400"/>
+<img src = "https://github.com/fgonlygle00/DontStopIt/assets/120997897/e7b377b1-b1f4-4a5d-be4d-f99a80597897" width="300" height="400"/>
+
 ---
 #### 게임플레이 화면
-<img src = "https://github.com/fgonlygle00/DontStopIt/assets/120997897/7e0b9b1a-2ec0-4a6d-8acc-77554120c7c7" width="300 height="400"/>
+<img src = "https://github.com/fgonlygle00/DontStopIt/assets/120997897/7e0b9b1a-2ec0-4a6d-8acc-77554120c7c7" width="300" height="400"/>
